@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CanvasCo-Pilot - Full Flow Mockup v2.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --surface: #0e0e0e; --primary: #81ecff; --tertiary: #ff51fa; --secondary: #fd8b00;
+        }
+        body { background-color: var(--surface); color: #fff; font-family: 'Inter', sans-serif; height: 100vh; overflow: hidden; }
+        .screen { display: none; height: 100vh; overflow-y: auto; padding-bottom: 5rem; }
+        .screen.active { display: block; animation: fadeIn 0.4s ease-out; }
+        .glass-panel { background: #1a1a1a; border: 1px solid #484847; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .kinetic-glow-primary { box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+        .btn { padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.2s; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: #003840; }
+        .btn-tertiary { background: var(--tertiary); color: #320032; }
+        .btn-outline { border: 2px solid #484847; background: transparent; color: #adaaaa; }
+        .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .method-card { background: linear-gradient(135deg, #20201f 0%, #131313 100%); border: 1px solid #484847; border-left: 6px solid var(--tertiary); }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        .bg-grid { background-image: radial-gradient(circle, #484847 1px, transparent 1px); background-size: 30px 30px; }
+    </style>
+</head>
+<body class="bg-grid">
+
+<!-- ============== SCREEN 0: MODERATOR SETUP ============== -->
+<div id="screen-0" class="screen active flex items-center justify-center">
+    <div class="max-w-xl w-full glass-panel kinetic-glow-primary">
+        <div class="flex items-center gap-4 mb-8">
+            <span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+            <h1 class="text-4xl font-headline font-black italic tracking-tighter text-primary">CANVAS_CO_PILOT</h1>
+        </div>
+        <div class="space-y-6">
+            <div>
+                <label class="font-label text-xs uppercase tracking-widest text-secondary mb-2 block">Hackathon Challenge</label>
+                <input type="text" value="Zukunft des Wohnens 2030" class="w-full bg-surface border border-outline-variant p-4 rounded-xl focus:border-primary outline-none">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="font-label text-xs uppercase tracking-widest text-secondary mb-2 block">Gruppen</label>
+                    <select class="w-full bg-surface border border-outline-variant p-4 rounded-xl outline-none">
+                        <option>4 Gruppen</option><option>6 Gruppen</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-label text-xs uppercase tracking-widest text-secondary mb-2 block">KI-Level</label>
+                    <select class="w-full bg-surface border border-outline-variant p-4 rounded-xl outline-none">
+                        <option>Deep Reflection</option><option>Standard</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-primary w-full mt-4" onclick="nav(1)">Session Starten</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============== SCREEN 1: ONBOARDING (MODERATOR) ============== -->
+<div id="screen-1" class="screen flex items-center justify-center">
+    <div class="max-w-5xl w-full flex gap-8">
+        <div class="flex-1 glass-panel">
+            <span class="font-label text-[10px] text-primary uppercase tracking-widest border border-primary/30 px-2 py-1 rounded">Moderator Dashboard</span>
+            <h2 class="text-3xl font-headline font-extrabold mt-4 mb-8">PHASE 1: GRUPPENBILDUNG</h2>
+            <div class="flex justify-center mb-10">
+                <div class="bg-white p-4 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=group-join" class="w-48 h-48 opacity-90"/>
+                    <p class="text-black text-center font-label text-[10px] mt-2 tracking-widest font-black uppercase">Scan to Join</p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center bg-surface-container-high border border-outline-variant p-4 rounded-xl">
+                    <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-green-400"></div><span class="font-bold">Team Alpha</span></div>
+                    <span class="font-label text-xs">4/4 ✅</span>
+                </div>
+                <div class="flex justify-between items-center bg-surface-container-high border border-outline-variant p-4 rounded-xl">
+                    <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></div><span class="font-bold">Team Beta</span></div>
+                    <span class="font-label text-xs">2/4 ⏳</span>
+                </div>
+            </div>
+            <button class="btn btn-tertiary w-full mt-10" onclick="nav(2)">Ideenfindung Starten ➔</button>
+        </div>
+        
+        <div class="w-80 glass-panel border-t-8 border-primary">
+            <h3 class="font-label text-center text-xs text-outline mb-6 uppercase tracking-widest">Teilnehmer-Blick</h3>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-surface-container-highest rounded-full mx-auto flex items-center justify-center text-3xl mb-4">👾</div>
+                <h4 class="text-xl font-bold mb-1">Nickname wählen</h4>
+                <p class="text-xs text-outline mb-6 italic">Kein Login nötig.</p>
+                <input type="text" placeholder="NinjaBuilder" class="w-full bg-surface border border-outline-variant p-4 rounded-xl mb-4 text-center">
+                <button class="btn btn-primary w-full text-sm">Beitreten</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============== SCREEN 2: METHOD EXPLAIN (IDEATION) ============== -->
+<div id="screen-2" class="screen flex items-center justify-center">
+    <div class="max-w-3xl glass-panel border-l-8 border-tertiary shadow-[0_0_30px_rgba(255,81,250,0.2)]">
+        <span class="font-label text-xs text-tertiary uppercase tracking-widest mb-2 block">Methode erklärt:</span>
+        <h2 class="text-5xl font-headline font-black italic tracking-tighter mb-6 uppercase">Crazy 8s</h2>
+        <div class="space-y-4 text-lg text-on-surface-variant leading-relaxed">
+            <p><strong class="text-tertiary">Prinzip:</strong> Schnell & Visuell. 8 Ideen in 8 Minuten.</p>
+            <p><strong class="text-tertiary">Das passiert jetzt:</strong> Der Timer tickt 8x für 1 Minute. Wir sammeln pro Minute eine radikale Vision.</p>
+            <p><strong class="text-tertiary">Ziel:</strong> Menge vor Qualität. Erstes Bauchgefühl zählt!</p>
+        </div>
+        <button class="btn btn-tertiary w-full mt-10 text-xl" onclick="nav(3)">Timer Starten (8:00)</button>
+    </div>
+</div>
+
+<!-- ============== SCREEN 3: IDEATION WORK (PARTICIPANT) ============== -->
+<div id="screen-3" class="screen flex items-center justify-center">
+    <div class="max-w-md w-full glass-panel border-t-8 border-tertiary relative">
+        <div class="absolute -top-12 left-0 right-0 text-center"><span class="bg-tertiary text-black font-label font-black px-4 py-2 rounded-full">00:54</span></div>
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h3 class="text-2xl font-headline font-black italic">IDEE 3/8</h3>
+                <p class="text-xs text-outline uppercase tracking-widest mt-1">Crazy 8s Methode</p>
+            </div>
+            <div class="text-right"><span class="text-primary font-label font-bold">+15 Pkt</span></div>
+        </div>
+        <div class="bg-surface p-4 rounded-xl border border-outline-variant mb-6 flex gap-3 italic text-gray-400 text-sm">
+            <span class="material-symbols-outlined text-tertiary">psychology</span>
+            <p><strong>KI Impuls:</strong> Was wäre, wenn wir Häuser wie Spielzeug zusammenbauen könnten?</p>
+        </div>
+        <textarea placeholder="Deine Vision..." class="w-full h-40 bg-surface border-2 border-outline-variant p-4 rounded-xl focus:border-tertiary outline-none text-xl font-medium"></textarea>
+        <button class="btn btn-tertiary w-full mt-6" onclick="nav(4)">Einreichen ➔</button>
+    </div>
+</div>
+
+<!-- ============== SCREEN 4: METHOD EXPLAIN (BMC) ============== -->
+<div id="screen-4" class="screen flex items-center justify-center">
+    <div class="max-w-3xl glass-panel border-l-8 border-primary">
+        <span class="font-label text-xs text-primary uppercase tracking-widest mb-2 block">Phase 3: Deep Dive</span>
+        <h2 class="text-5xl font-headline font-black italic tracking-tighter mb-6 uppercase">BUSINESS MODEL CANVAS</h2>
+        <div class="space-y-4 text-lg text-on-surface-variant leading-relaxed">
+            <p>Wir füllen nun gemeinsam die **9 Felder** eures Geschäftsmodells.</p>
+            <p>Pro Feld habt ihr <strong class="text-primary">5 Minuten</strong>.</p>
+            <p>Wichtig: Ihr seht nur die Antworten eurer eigenen Gruppe. Konzentriert euch voll auf euer Team!</p>
+        </div>
+        <button class="btn btn-primary w-full mt-10 text-xl" onclick="nav(5)">Feld 1: Customer Segments ➔</button>
+    </div>
+</div>
+
+<!-- ============== SCREEN 5: BMC WORK (PARTICIPANT) ============== -->
+<div id="screen-5" class="screen flex items-center justify-center">
+    <div class="max-w-md w-full glass-panel border-t-8 border-primary">
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-xl font-headline font-black">1. CUSTOMER SEGMENTS</h3>
+            <span class="font-label text-[10px] text-primary uppercase tracking-widest">Feld 1 von 9</span>
+        </div>
+        <p class="text-sm text-outline mb-6 italic">Wer hat das Problem am schlimmsten? Für wen bauen wir das?</p>
+        
+        <div class="bg-[#00e3fd]/10 p-4 rounded-xl border border-primary/20 mb-8">
+            <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-primary">lightbulb</span><span class="font-label font-bold text-xs uppercase text-primary">AI Research Assistant</span></div>
+            <p class="text-xs text-primary/80 leading-relaxed italic">Denk an junge Familien in Städten (Stauraum-Mangel) oder an Minimalisten, die oft umziehen.</p>
+        </div>
+
+        <textarea placeholder="z.B. Digital-Nomaden, Rentner in Co-Living Spaces..." class="w-full h-32 bg-surface border-2 border-outline-variant p-4 rounded-xl focus:border-primary outline-none"></textarea>
+        <button class="btn btn-primary w-full mt-6" onclick="nav(6)">Antwort Senden</button>
+    </div>
+</div>
+
+<!-- ============== SCREEN 6: BMC VOTING (ISOLATED) ============== -->
+<div id="screen-6" class="screen flex items-center justify-center">
+    <div class="max-w-md w-full glass-panel border-t-8 border-secondary relative">
+        <div class="absolute -top-4 -left-4 w-8 h-8 opacity-20"><span class="material-symbols-outlined text-secondary">shield</span></div>
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-xl font-headline font-black">VOTING: KUNDEN</h3>
+            <span class="font-label text-xs text-secondary">Team Alpha Only</span>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-surface border-2 border-secondary p-4 rounded-xl flex justify-between items-center hover:bg-secondary/10 transition-colors cursor-pointer group">
+                <span class="font-bold">Auszubildende in Wohnheimen</span>
+                <span class="bg-secondary text-surface text-[10px] font-black px-2 py-1 rounded">VOTE</span>
+            </div>
+            <div class="bg-surface border-2 border-outline-variant p-4 rounded-xl flex justify-between items-center hover:border-secondary transition-colors cursor-pointer">
+                <span class="font-bold">Studenten in WGs</span>
+                <span class="text-xs text-outline">2 Votes</span>
+            </div>
+            <div class="bg-surface border-2 border-outline-variant p-4 rounded-xl flex justify-between items-center hover:border-secondary transition-colors cursor-pointer">
+                <span class="font-bold">Einfamilienhaus-Besitzer</span>
+                <span class="text-xs text-outline">0 Votes</span>
+            </div>
+        </div>
+        <div class="mt-10 p-4 bg-error/10 border border-error/30 rounded-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 text-3xl">🧩</div>
+            <span class="text-xs text-error font-bold uppercase tracking-widest block mb-1">AI CRITICAL CHALLENGE</span>
+            <p class="text-sm font-medium">Verdienen Auszubildende genug, um sich euer Luxus-Abonnement zu leisten?</p>
+        </div>
+        <button class="btn btn-outline w-full mt-8" onclick="nav(7)">Moderator wartet auf Feld 2...</button>
+    </div>
+</div>
+
+<!-- ============== SCREEN 7: MODERATOR DASHBOARD (ISOLATION CUE) ============== -->
+<div id="screen-7" class="screen flex items-center justify-center">
+    <div class="max-w-6xl w-full glass-panel relative">
+        <div class="absolute top-4 right-8 flex items-center gap-2"><span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span><span class="text-xs font-label uppercase tracking-widest">Live Sync</span></div>
+        <h2 class="text-4xl font-headline font-black italic mb-10">MODERATOR CONTROL PANEL</h2>
+        
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Team Alpha Col -->
+            <div class="space-y-4">
+                <h4 class="font-label font-black text-xs text-primary border-b border-primary/30 pb-2">TEAM ALPHA</h4>
+                <div class="bg-surface p-4 rounded-xl border border-outline-variant min-h-[100px]">
+                    <span class="text-[10px] text-outline block mb-2 uppercase">Gewählte Zielgruppe:</span>
+                    <p class="font-bold text-primary">Auszubildende in Wohnheimen</p>
+                </div>
+            </div>
+            <!-- Team Beta Col -->
+            <div class="space-y-4">
+                <h4 class="font-label font-black text-xs text-tertiary border-b border-tertiary/30 pb-2">TEAM BETA</h4>
+                <div class="bg-surface p-4 rounded-xl border border-outline-variant min-h-[100px]">
+                    <span class="text-[10px] text-outline block mb-2 uppercase">Gewählte Zielgruppe:</span>
+                    <p class="font-bold text-tertiary">Pendler mit Zweitwohnung</p>
+                </div>
+            </div>
+            <!-- Team Gamma Col -->
+            <div class="space-y-4">
+                <h4 class="font-label font-black text-xs text-secondary border-b border-secondary/30 pb-2">TEAM GAMMA</h4>
+                <div class="bg-surface p-4 rounded-xl border border-outline-variant min-h-[100px] flex items-center justify-center italic text-outline text-xs">
+                    Warte auf Voting...
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 p-8 bg-surface-container rounded-2xl border border-outline-variant text-center">
+            <p class="text-outline text-sm mb-4">Der Moderator sieht ALLES, aber die Teams sehen nur IHREN Fortschritt.</p>
+            <button class="btn btn-primary px-12" onclick="nav(8)">Alle Teams zu Feld 2 pushen ➔</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============== SCREEN 8: FINALE ============== -->
+<div id="screen-8" class="screen flex items-center justify-center">
+    <div class="max-w-4xl w-full text-center">
+        <h1 class="text-7xl font-headline font-black italic text-tertiary tracking-tighter mb-4 animate-bounce">PITCH PERFECT! 🎉</h1>
+        <p class="text-xl text-on-surface-variant mb-12 italic">Von der Vision zum Business Model in 120 Minuten.</p>
+        <div class="grid grid-cols-2 gap-8 text-left">
+            <div class="glass-panel border-t-8 border-primary">
+                <h3 class="text-2xl font-bold mb-4">Team Alpha</h3>
+                <div class="space-y-3 opacity-60 text-sm">
+                    <p>🎯 <strong class="text-primary uppercase tracking-widest text-[10px]">Idee:</strong> Modulares Smart-Furniture</p>
+                    <p>👥 <strong class="text-primary uppercase tracking-widest text-[10px]">Kunden:</strong> Stadt-Nomaden</p>
+                    <p>💶 <strong class="text-primary uppercase tracking-widest text-[10px]">Revenue:</strong> Rental-Subscription</p>
+                </div>
+                <button class="btn btn-primary w-full mt-8 text-xs">PDF EXPORT</button>
+            </div>
+            <div class="glass-panel border-t-8 border-tertiary">
+                <h3 class="text-2xl font-bold mb-4">Team Beta</h3>
+                <div class="space-y-3 opacity-60 text-sm">
+                    <p>🎯 <strong class="text-tertiary uppercase tracking-widest text-[10px]">Idee:</strong> AI Tiny Houses</p>
+                    <p>👥 <strong class="text-tertiary uppercase tracking-widest text-[10px]">Kunden:</strong> Senioren Co-Living</p>
+                </div>
+                <button class="btn btn-tertiary w-full mt-8 text-xs">PDF EXPORT</button>
+            </div>
+        </div>
+        <button class="btn btn-outline mt-12 px-10" onclick="nav(0)">Session Beenden</button>
+    </div>
+</div>
+
+<script>
+    function nav(screenId) {
+        document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+        const target = document.getElementById('screen-' + screenId);
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
