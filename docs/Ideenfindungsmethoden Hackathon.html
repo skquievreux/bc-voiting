@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideenfindungsmethoden im Hackathon</title>
+    <style>
+        /* Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Layout Utilities */
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center { justify-content: center; align-items: center; text-align: center; }
+        .space-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+
+        /* Spacing */
+        .gap-sm { gap: 0.5rem; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+        .gap-xl { gap: 2rem; }
+        .gap-2xl { gap: 3rem; }
+
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .p-16 { padding: 4rem; }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 { font-family: Arial, sans-serif; font-weight: 600; line-height: 1.2; margin: 0; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        .text-6xl { font-size: 3.75rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-sm { font-size: 0.875rem; }
+
+        .font-bold { font-weight: 700; }
+        .text-center { text-align: center; }
+
+        /* Lists */
+        ul, ol { margin-left: 2rem; line-height: 1.8; }
+        ul li { list-style: disc; margin-bottom: 0.75rem; }
+        li:last-child { margin-bottom: 0; }
+
+        /* Cards */
+        .card { padding: 2rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+
+        .opacity-90 { opacity: 0.9; }
+    </style>
+</head>
+<body style="background-color: #f5f5f5;">
+
+    <!-- Titelfolie -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h1 class="text-6xl mb-4" style="color: #38bdf8;">Ideenfindungsmethoden</h1>
+        <p class="text-2xl" style="color: #cbd5e1;">im Hackathon</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">Von der Idee zum Business Model Canvas</p>
+    </section>
+
+    <!-- ===== BRAINSTORMING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainstorming</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Gruppe trifft sich, um frei Ideen zu äußern ohne Bewertung oder Kritik</li>
+                <li><strong style="color: #38bdf8;">Prozess:</strong> Moderator stellt Problem vor, alle Teilnehmer tragen spontan Ideen bei</li>
+                <li><strong style="color: #38bdf8;">Ergebnis:</strong> Große Menge an diversen Ideen, die später gefiltert werden</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainstorming (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Best Practices:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Klare Ziele und Problemstellung definieren</li>
+                <li>Diverse Gruppe zusammenstellen</li>
+                <li>Keine Kritik während der Session – alle Ideen sind willkommen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainstorming (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Perfekt für den schnellen Start nach der Themavorgabe</li>
+                <li>Schafft lockere, kreative Atmosphäre</li>
+                <li>Hohe Teilnehmerbeteiligung und schnelle Ideenflut</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== BRAINWRITING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainwriting (6-3-5)</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Schriftliche Ideenentwicklung statt mündlich – jeder schreibt anonym</li>
+                <li><strong style="color: #38bdf8;">6-3-5 Methode:</strong> 6 Personen schreiben je 3 Ideen in 5 Minuten, dann weitergeben = 108 Ideen in 30 Min</li>
+                <li><strong style="color: #38bdf8;">Vorteil:</strong> Gleichberechtigte Beteiligung, keine Dominanz einzelner Sprecher</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainwriting (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Ablauf:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Jeder schreibt auf Papier (anonym) 3 Ideen auf</li>
+                <li>Nach 5 Min: Papier wird im Kreis weitergereicht</li>
+                <li>Nächster Person baut auf den Ideen auf oder ergänzt diese</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Brainwriting (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Ideal nach dem ersten Brainstorming zur Vertiefung</li>
+                <li>Motiviert schüchterne Teilnehmer, ihre Ideen einzubringen</li>
+                <li>Strukturierter & nachvollziehbar – Ideen entwickeln sich sichtbar weiter</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CRAZY 8s ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crazy 8s</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Schnell & visuell – 8 Skizzen/Ideen in 8 Minuten</li>
+                <li><strong style="color: #38bdf8;">Fokus:</strong> Menge statt Qualität, Geschwindigkeit bricht Perfektionismus</li>
+                <li><strong style="color: #38bdf8;">Ergebnis:</strong> Visuelle Darstellung von 8 verschiedenen Lösungsansätzen pro Person</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crazy 8s (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Ablauf:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>A4-Blatt in 8 Quadrate falten</li>
+                <li>8 Min Zeit: Schnelle Skizzen/Stichpunkte zu 8 verschiedenen Ideen</li>
+                <li>Keine Perfektion nötig – Skizzen reichen aus</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crazy 8s (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Perfekt nach Brainstorming zur Visualisierung konkreter Lösungen</li>
+                <li>Macht abstrakte Ideen greifbar & besser vergleichbar</li>
+                <li>Schnelle Methode, spart Zeit für weitere Schritte</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== SCAMPER ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">SCAMPER</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">S – Substitute:</strong> Komponenten/Materialien austauschen</li>
+                <li><strong style="color: #38bdf8;">C – Combine:</strong> Bestehende Funktionen/Produkte kombinieren</li>
+                <li><strong style="color: #38bdf8;">A – Adapt:</strong> Für neuen Zweck anpassen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">SCAMPER (Fo. 2)</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">M – Modify:</strong> Größe/Form/Eigenschaften verändern</li>
+                <li><strong style="color: #38bdf8;">P – Put to other use:</strong> Anderen Zweck finden</li>
+                <li><strong style="color: #38bdf8;">E – Eliminate:</strong> Elemente entfernen/weglassen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">SCAMPER (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Systematischer Ansatz zur Weiterentwicklung bestehender Konzepte</li>
+                <li>Hilft, mehrere Perspektiven auf das Problem zu entdecken</li>
+                <li>Ideal für die Refinement-Phase nach ersten Ideen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== MIND MAPPING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Mind Mapping</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Zentrale Idee mit Verzweigungen zu verwandten Konzepten</li>
+                <li><strong style="color: #38bdf8;">Visuell & nicht-linear:</strong> Fördert neue Assoziationen und holistische Übersicht</li>
+                <li><strong style="color: #38bdf8;">Struktur:</strong> Zentrum – Hauptäste – Unteräste – Details</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Mind Mapping (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Best Practices:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Farbige Stiftzeichnung nutzen – erleichtert visuelle Ordnung</li>
+                <li>Scheinbar irrelevante Verbindungen erkunden – oft entstehen beste Ideen!</li>
+                <li>Mit Hand zeichnen statt digital – fördert Kreativität</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Mind Mapping (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Guter Start für thematische Orientierung & Clusterung</li>
+                <li>Hilft beim Erkennen von Zusammenhängen zwischen Ideen</li>
+                <li>Bereitet Clustering von Ideen vor (→ Dot Voting)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== SIX THINKING HATS ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Six Thinking Hats (1/2)</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Weißer Hut:</strong> Fakten & Informationen – Was wissen wir?</li>
+                <li><strong style="color: #38bdf8;">Roter Hut:</strong> Gefühle & Intuition – Wie fühlen wir uns?</li>
+                <li><strong style="color: #38bdf8;">Schwarzer Hut:</strong> Kritik & Vorsicht – Was könnte schiefgehen?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Six Thinking Hats (2/2)</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Gelber Hut:</strong> Optimismus – Welche Chancen gibt es?</li>
+                <li><strong style="color: #38bdf8;">Grüner Hut:</strong> Kreativität – Welche neuen Ideen/Lösungen?</li>
+                <li><strong style="color: #38bdf8;">Blauer Hut:</strong> Steuerung – Wie gehen wir vor? Nächste Schritte?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Six Thinking Hats (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Strukturiert verschiedene Perspektiven auf eine Idee</li>
+                <li>Verhindert, dass kritische Punkte übersehen werden</li>
+                <li>Ideal für Vertiefung von ausgewählten Top-Ideen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== REVERSE BRAINSTORMING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Reverse Brainstorming</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Nicht das Problem lösen, sondern es verschlimmern!</li>
+                <li><strong style="color: #38bdf8;">Ablauf:</strong> Sammeln, wie man das Problem verschärft → dann umkehren = Lösungen</li>
+                <li><strong style="color: #38bdf8;">Nutzen:</strong> Bricht kreative Blockaden auf, eröffnet unkonventionelle Perspektiven</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Reverse Brainstorming (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Beispiel:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Problem: Ärzte in Kliniken sind überlastet</li>
+                <li>Umgekehrt: Wie könnte man Überbelastung noch verschlimmern?</li>
+                <li>Umkehren: Wie können wir Ärzte entlasten? → KI-Tools zur Diagnose, automatische Dokumentation</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Reverse Brainstorming (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Hilft aus Sackgassen herauszukommen</li>
+                <li>Besonders effektiv, wenn konventionelles Brainstorming steckenbleibt</li>
+                <li>Fördert radikale, disruptive Ideen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== WAS-WÄRE-WENN ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Was-wäre-wenn-Methode</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Radikale Szenarien durchspielen – Grenzen verschieben</li>
+                <li><strong style="color: #38bdf8;">Beispiele:</strong> &quot;Was wäre, wenn es keine Ärzte gäbe?&quot; oder &quot;Was wenn KI alle Diagnosen stellt?&quot;</li>
+                <li><strong style="color: #38bdf8;">Ziel:</strong> Disruptive Ideen entwickeln, nicht inkrementelle Verbesserungen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Was-wäre-wenn (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Gute Fragen stellen:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Fragen, die bestehende Paradigmen infrage stellen</li>
+                <li>Radikal & unrealistisch genug um neue Gedanken zu generieren</li>
+                <li>Z.B. für KI im Krankenhaus: &quot;Was wenn Patienten selbst diagnostizieren?&quot;</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Was-wäre-wenn (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Ideal für Vision & strategische Ideenfindung</li>
+                <li>Erzeugt unerwartete, innovative Lösungen</li>
+                <li>Arbeitet gut in Kombination mit anderen Methoden</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CUSTOMER JOURNEY MAPPING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Customer Journey Mapping</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Nutzererlebnis Schritt für Schritt darstellen</li>
+                <li><strong style="color: #38bdf8;">Fokus:</strong> Berührungspunkte, Schmerzen, Gefühle, Bedürfnisse des Nutzers</li>
+                <li><strong style="color: #38bdf8;">Ergebnis:</strong> Nutzerzentrierte Lösungsideen aus echter Perspektive</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Customer Journey Mapping (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Ablauf:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Persona definieren (z.B. Facharzt, Patient, Pflegekraft)</li>
+                <li>Alle Interaktionspunkte aufzeichnen (vor, während, nach Besuch)</li>
+                <li>Schmerzpunkte & Freudmomente identifizieren</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Customer Journey Mapping (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Schafft Empathie für den Nutzer</li>
+                <li>Identifiziert konkrete Probleme zum Lösen</li>
+                <li>Grundlage für später: Personas & Empathy Maps</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== PERSONAS UND EMPATHY MAPS ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Personas & Empathy Maps</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Persona:</strong> Fiktives Profil von Zielnutzer mit Name, Alter, Beruf, Ziele</li>
+                <li><strong style="color: #38bdf8;">Empathy Map:</strong> Was denkt, fühlt, sagt, tut die Person? Wo sind Schmerzen?</li>
+                <li><strong style="color: #38bdf8;">Nutzen:</strong> Hilft, Lösungen aus echter Nutzerperspektive zu entwickeln</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Personas & Empathy Maps (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Empathy Map Felder:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>THINK: Was beschäftigt die Person innerlich?</li>
+                <li>FEEL: Welche Emotionen hat die Person?</li>
+                <li>SAY: Was sagt die Person? Welche Sprache?</li>
+                <li>DO: Welche Aktionen führt sie durch?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Personas & Empathy Maps (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Macht Nutzer greifbar & lebendig für das Team</li>
+                <li>Zentral für Design Thinking & empathie-basierte Lösungen</li>
+                <li>Verhindert, dass Lösungen an echten Bedürfnissen vorbeigehen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== DOT VOTING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Dot Voting / Priorisierung</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Ideen mit Klebepunkten bewerten – demokratisch & schnell</li>
+                <li><strong style="color: #38bdf8;">Ablauf:</strong> Alle Ideen an Wand/Tafel, jeder erhält z.B. 3 Punkte</li>
+                <li><strong style="color: #38bdf8;">Ergebnis:</strong> Top-Ideen werden sofort erkennbar, Diskussionen werden minimal</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Dot Voting (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Best Practices:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Jeder bekommt gleiche Anzahl Punkte (z.B. 3-5 pro Person)</li>
+                <li>Punkte können auf 1 Idee konzentriert oder verteilt werden</li>
+                <li>Transparent & fair – keine versteckte Agenda möglich</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Dot Voting (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Nach großem Ideenpool: Schnelle Auswahl der Top-5 Ideen</li>
+                <li>Spart endlose Diskussionen & Entscheidungsdebatten</li>
+                <li>Bereitet vor: Business Model Canvas-Entwicklung für beste Idee</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CROWDSOURCING ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crowdsourcing</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Kollektive Intelligenz einer fokussierten Gruppe nutzen</li>
+                <li><strong style="color: #38bdf8;">Umfang:</strong> Breiter als nur Hackathon-Team – externe Experten, Kunden einbeziehen</li>
+                <li><strong style="color: #38bdf8;">Ergebnis:</strong> Hochwertige, vielfältige Ideen durch Expertise von außen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crowdsourcing (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Formen:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Innovationswettbewerb – Externe werden eingeladen, Ideen einzureichen</li>
+                <li>Digitale Plattform – Online-Beteiligung, Kommentare, Bewertungen</li>
+                <li>Hackathon selbst – Mit externen Teilnehmern</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Crowdsourcing (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Erweitert Perspektiven über Hackathon-Team hinaus</li>
+                <li>Bringt Domänenexperts (z.B. Ärzte, Patienten) an den Tisch</li>
+                <li>Validiert Ideen von Anfang an mit echten Nutzern</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== PYRAMIDENSUCHE ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Pyramidensuche</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Prinzip:</strong> Experten-Netzwerk aufbauen – vom Oberflächlichen zum Tiefen</li>
+                <li><strong style="color: #38bdf8;">Ablauf:</strong> Expert A nennt Expert B mit mehr Tiefe → B nennt C → Wissen sammeln</li>
+                <li><strong style="color: #38bdf8;">Nutzen:</strong> Innovative Lösungen aus anderen Branchen/Domains adaptieren</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Pyramidensuche (Fo. 2)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Ablauf in 4 Schritten:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Experten im Zielbereich identifizieren (KI, Healthcare)</li>
+                <li>Mit diesen Gespräche führen, Problem diskutieren</li>
+                <li>Empfehlungen für noch tiefere Experten einholen</li>
+                <li>Später auch Experten aus analogen Branchen befragen</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Pyramidensuche (Fo. 3)</h2>
+        <div class="fill-height">
+            <p class="text-lg mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">Einsatz im Hackathon:</strong></p>
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Zeitaufwendig – daher eher für Pre-Hackathon-Forschung</li>
+                <li>Liefert Expertenwissen & Validierung für Hackathon</li>
+                <li>Inspiriert Cross-Industry-Lösungen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== ZUSAMMENFASSUNG ===== -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Prozessablauf im Hackathon</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Phase 1 - Verstehen:</strong> Themainput, ggf. Experten-Input</li>
+                <li><strong style="color: #38bdf8;">Phase 2 - Empathie:</strong> Personas, Customer Journey, Empathy Maps</li>
+                <li><strong style="color: #38bdf8;">Phase 3 - Ideenfindung:</strong> Brainstorming, Brainwriting, Crazy 8s, SCAMPER, Mind Mapping</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Prozessablauf im Hackathon (2/2)</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li><strong style="color: #38bdf8;">Phase 4 - Refinement:</strong> Reverse Brainstorming, Was-wäre-wenn, Six Thinking Hats, SCAMPER</li>
+                <li><strong style="color: #38bdf8;">Phase 5 - Auswahl:</strong> Dot Voting → Top 3-5 Ideen</li>
+                <li><strong style="color: #38bdf8;">Phase 6 - Umsetzung:</strong> Business Model Canvas für beste Idee(n)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Tipps für erfolgreiche Ideenfindung</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li>Ziele klar definieren vor jeder Methode</li>
+                <li>Sichere, nicht-wertende Atmosphäre schaffen</li>
+                <li>Wilder Ideen begrüßen – Qualität kommt später</li>
+                <li>Aufeinander aufbauen – Kombinieren, verbessern, mutieren</li>
+                <li>Spaß haben! Kreativität blüht in positiver Umgebung</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Schlussfolie -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h2 class="text-5xl mb-6" style="color: #38bdf8;">Viel Erfolg!</h2>
+        <p class="text-xl" style="color: #cbd5e1;">Von der Idee zum innovativen Business Model</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">Lass die Kreativität fließen & generiere großartige Ideen!</p>
+    </section>
+
+</body>
+</html>

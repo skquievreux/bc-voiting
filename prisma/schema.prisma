@@ -1,0 +1,81 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Session {
+  id            String    @id @default(cuid())
+  name          String
+  theme         String?   // e.g., "KI im Gesundheitswesen"
+  currentPhase  String    @default("SETUP") // SETUP, ONBOARDING, IDEATION, BMC, PITCH, FINISHED
+  currentStep   Int       @default(0)       // Step within a phase (e.g., BMC field 1-9)
+  aiDepth       String    @default("STANDARD") // BASIC, STANDARD, DEEP
+  status        String    @default("ACTIVE")   // ACTIVE, ARCHIVED
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  groups        Group[]
+}
+
+model Group {
+  id          String       @id @default(cuid())
+  sessionId   String
+  session     Session      @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  name        String
+  mode        String       @default("INDIVIDUAL") // INDIVIDUAL, SHARED
+  finalIdea   String?      // Result from Phase 2
+  totalScore  Int          @default(0)
+  members     Member[]
+  submissions Submission[]
+  createdAt   DateTime     @default(now())
+
+  @@index([sessionId])
+}
+
+model Member {
+  id         String       @id @default(cuid())
+  groupId    String
+  group      Group        @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  nickname   String
+  totalScore Int          @default(0)
+  isLeader   Boolean      @default(false)
+  submissions Submission[]
+  votes       Vote[]
+  createdAt  DateTime     @default(now())
+
+  @@index([groupId])
+}
+
+model Submission {
+  id         String   @id @default(cuid())
+  groupId    String
+  group      Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  memberId   String?
+  member     Member?  @relation(fields: [memberId], references: [id], onDelete: SetNull)
+  phase      String   // IDEATION, BMC
+  methodKey  String?  // brainstorming, crazy8s, etc.
+  fieldKey   String?  // customer_segments, revenue_streams, etc.
+  content    String
+  isWinner   Boolean  @default(false)
+  votes      Vote[]
+  createdAt  DateTime @default(now())
+
+  @@index([groupId])
+  @@index([memberId])
+}
+
+model Vote {
+  id           String     @id @default(cuid())
+  memberId     String
+  member       Member     @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  submissionId String
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+
+  @@unique([memberId, submissionId])
+  @@index([submissionId])
+}
